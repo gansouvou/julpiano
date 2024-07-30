@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Piano</title>
+    <link rel="stylesheet" href="piano.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <h2>PIANO</h2>
+
+            <div class="column volume-slider">
+                <span>Volume</span>
+                <input type="range" min="0" max="1" value="0.5" step="any">
+            </div>
+
+            
+            <div class="clock"></div>
+
+            <div class="column keys-checkbox">
+                <span>Show keys</span>
+                <input type="checkbox" checked>
+            </div>
+        </header>
+
+        <ul class="piano-keys">
+            <li class="key white" data-key="z"><span>do</span></li>
+            <li class="key black" data-key="h"><span>di</span></li>
+            <li class="key white" data-key="d"><span>re</span></li>
+            <li class="key black" data-key="r"><span>ri</span></li>
+            <li class="key white" data-key="e"><span>mi</span></li>
+            <li class="key white" data-key="t"><span>fa</span></li>
+            <li class="key black" data-key="f"><span>fe</span></li>
+            <li class="key white" data-key="y"><span>so</span></li>
+            <li class="key black" data-key="j"><span>te</span></li>
+            <li class="key white" data-key="u"><span>la</span></li>
+            <li class="key black" data-key="g"><span>se</span></li>
+            <li class="key white" data-key="i"><span>si</span></li>
+            <li class="key white" data-key="o"><span>do</span></li>
+            <li class="key black" data-key="q"><span>di</span></li>
+            <li class="key white" data-key="p"><span>re</span></li>
+            <li class="key black" data-key="s"><span>ri</span></li>
+            <li class="key white" data-key="a"><span>mi</span></li>
+        </ul>
+    </div>
+    
+    <script src="piano.js" defer></script>
+</body>
+</html>

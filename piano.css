@@ -1,0 +1,113 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; box-sizing: border-box;
+}
+body{
+    display: flex; align-items: center; justify-content: center; background-color: #e3f2fd; height: 100vh;
+}
+.wrapper{
+    background-repeat: 20px; background-color: #141414; padding: 35px 40px;
+}
+.wrapper header{
+    color: #b2b2b2; display: flex;align-items: center; justify-content: space-between;
+}
+header h2{
+    font-size: 1.6rem;
+}
+
+.clock{
+    font-size: 1.2rem; font-weight: 900;
+}
+
+header .column{
+    display: flex; align-items: center; 
+}
+header .column span{
+    font-weight: 500; margin-left: 15px; font-size: 1.19rem;
+}
+.volume-slider input{
+    accent-color: #fff; outline: none; 
+}
+.keys-checkbox input{
+    width: 60px; height: 30px; cursor:  pointer; appearance: none; border-radius: 30px; background-color: #4b4b4b; position: relative;
+}
+.keys-checkbox input::before{
+    content: ""; height: 20px; width: 20px; top: 50px; left: 5px; border-radius: inherit; position: absolute; background-color: #8c8c8c; 
+    top: 50%; left: 5px; transform: translateY(-50%); transition: all 0.3s ease;
+}
+.keys-checkbox input:checked::before{
+    left: 35px; background-color: #fff;
+}
+
+.piano-keys{
+    display: flex; margin-top: 40px; 
+}
+.piano-keys .key{
+    list-style: none; color: #a2a2a2; text-transform: uppercase; position: relative; cursor: pointer; user-select: none;
+}
+.piano-keys .black{
+    width: 44px;height: 140px; margin: 0 -22px; border-radius: 0 0 5px 5px; background: linear-gradient(#333, #000); z-index: 2;
+}
+.piano-keys .black.active{
+    box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1) ; background: linear-gradient(to bottom, #000 , #434343 100%);
+}
+.piano-keys .white{
+    width: 70px; height: 230px; background: linear-gradient(#fff 96%, #eee 4%); border-radius: 8px; border: 1px solid #000;
+}
+.piano-keys .white.active{
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2) ; background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+
+.piano-keys span{
+    position: absolute; bottom: 20px; width: 100%; font-size: 1.13rem; text-align: center;
+}
+
+.piano-keys .key.hide span{
+    display: none;
+}
+
+
+@media screen and (max-width: 815px) {
+    .wrapper{
+        padding: 25px;
+    }
+    header :where(h2, .colum){
+        margin-bottom: 13px;
+    }
+    
+    .volume-slider input{
+        max-width: 100px;
+    }
+    .piano-keys{
+        margin-top: 20px; 
+    }
+
+
+    .piano-keys .key:where(:ntn-child(9), :ntn-child(10)){
+        display: none; 
+    }
+    .piano-keys .black{
+        width: 40px;height: 100px; margin: 0 -20px; 
+    }
+    .piano-keys .white{
+        width: 60px; height: 180px; 
+    }
+    .piano-keys span{
+        position: absolute; bottom: 20px; width: 100%; font-size: 1.13rem; text-align: center;
+    }
+
+}
+
+
+@media screen and (max-width: 615px) {
+    .piano-keys .key:ntn-child(13),
+    .piano-keys .key:ntn-child(14),
+    .piano-keys .key:ntn-child(15),
+    .piano-keys .key:ntn-child(16),
+    .piano-keys .key:ntn-child(17){
+        display: none;
+    }
+
+    .piano-keys .white{
+        width: 50px;
+    }
+}
